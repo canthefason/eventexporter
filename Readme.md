@@ -19,16 +19,15 @@ eventexporter is a library to export events to 3rd party services.
     client := eventexporter.NewSegementIOExporter(key, size)
     client.Send(event)
 
-FakeExporter is a implementation of Exporter to be used in tests.
+FakeExporter is an implementation of Exporter to be used in tests.
 
     import (
       "github.com/koding/eventexporter"
-      "github.com/koding/eventexporter/eventexportertest"
     )
 
     event := &eventexporter.Event{Name: "test event"}
 
-    client := eventexportertest.NewFakeExporter()
+    client := eventexporter.NewFakeExporter()
     client.Send(event)
 
     fmt.Println(client.Events)
